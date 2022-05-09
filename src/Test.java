@@ -45,6 +45,7 @@ public class Test {
                     System.out.println(UserQuestions.askClassName);
                     String className = scan.next();
                     Permission.checkClassName(className);
+
                     student.add(className.equalsIgnoreCase("math") ?
                             new MathStudent(firstName, lastName, age, gender, className) :
                             new ScienceStudent(firstName, lastName, age, gender, className));
@@ -58,7 +59,7 @@ public class Test {
 
         int countMath = 0, countScience = 0;
         for (Student s : student) {
-            if (student.getClassName().equalsIgnoreCase("math")) countMath++;
+            if (s.getClassName().equalsIgnoreCase("math")) countMath++;
             else countScience++;
             System.out.println(student);
         }
